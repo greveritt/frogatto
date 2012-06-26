@@ -18,6 +18,7 @@ namespace {
 void end_dialog(gui::dialog* d, PAUSE_GAME_RESULT* result, PAUSE_GAME_RESULT value)
 {
 	*result = value;
+	SDL_ShowCursor(SDL_DISABLE);
 	d->close();
 }
 
@@ -50,6 +51,7 @@ PAUSE_GAME_RESULT show_pause_game_dialog()
 #endif
 	
 	using namespace gui;
+	SDL_ShowCursor(SDL_ENABLE);
 	widget_ptr t1(new graphical_font_label(_("Music Volume:"), "door_label", 2));
 	widget_ptr s1(new slider(200, boost::bind(sound::set_music_volume, _1), sound::get_music_volume()));
 	widget_ptr t2(new graphical_font_label(_("Sound Volume:"), "door_label", 2));

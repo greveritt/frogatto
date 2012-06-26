@@ -347,7 +347,7 @@ extern "C" int main(int argcount, char** argvec)
 		return -1;
 	}
 	LOG( "After SDL_Init" );
-
+	SDL_ShowCursor(SDL_DISABLE);
 #ifdef TARGET_OS_HARMATTAN
 	g_type_init();
 #endif
